@@ -1,0 +1,15 @@
+.layout {
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.content {
+    padding: 20px;
+    margin: 0;
+}
