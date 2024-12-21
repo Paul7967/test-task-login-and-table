@@ -1,50 +1,84 @@
-# React + TypeScript + Vite
+# Корпоративная система управления персоналом
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание проекта
 
-Currently, two official plugins are available:
+Веб-приложение для управления информацией о сотрудниках с функциями авторизации и редактирования данных.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Стек технологий
 
-## Expanding the ESLint configuration
+- React
+- TypeScript
+- Ant Design
+- React Router
+- Vite
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Страницы приложения
 
-- Configure the top-level `parserOptions` property like this:
+1. **Страница входа (`/login`)**
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+    - Форма авторизации
+    - Валидация полей логина и пароля
+    - Переход на главную страницу после успешной авторизации
+
+2. **Страница сброса пароля (`/reset-password`)**
+
+    - Форма для установки нового пароля
+    - Валидация совпадения паролей
+    - Кнопка сброса пароля
+
+3. **Главная страница (`/main`)**
+    - Таблица сотрудников
+    - Возможность редактирования данных:
+        - Дата найма (DatePicker)
+        - Период работы (RangePicker)
+
+## Установка и запуск
+
+### Prerequisites
+
+- Node.js (версия 16+)
+- Yarn
+
+### Шаги установки
+
+1. Клонируйте репозиторий
+
+```bash
+git clone https://github.com/your-username/test-task-login-and-table.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Установите зависимости
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+yarn install
 ```
+
+3. Запустите dev-сервер
+
+```bash
+yarn dev
+```
+
+4. Откройте приложение
+
+- Откройте `http://localhost:5173` в браузере
+
+## Сборка проекта
+
+```bash
+yarn build
+```
+
+## Lint и форматирование
+
+```bash
+# Проверка линтера
+yarn lint
+
+# Форматирование кода
+yarn format
+```
+
+## Лицензия
+
+Проект предоставлен в качестве демонстрации работы и не является коммерческим продуктом.
